@@ -1,0 +1,216 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
+--
+-- Хост: localhost:3306
+-- Время создания: Фев 14 2019 г., 13:48
+-- Версия сервера: 5.6.42-cll-lve
+-- Версия PHP: 7.2.7
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- База данных: `m45580_mirafox`
+--
+
+DELIMITER $$
+--
+-- Процедуры
+--
+$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `log`
+--
+
+CREATE TABLE `log` (
+  `id` int(11) NOT NULL,
+  `iq` int(11) NOT NULL,
+  `diff` varchar(50) NOT NULL,
+  `result` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `log`
+--
+
+INSERT INTO `log` (`id`, `iq`, `diff`, `result`) VALUES
+(5, 50, '0-56', '39 / 40'),
+(6, 50, '0-56', '39 / 40'),
+(7, 50, '0-56', '36 / 40'),
+(8, 90, '0-56', '40 / 40'),
+(9, 90, '0-56', '40 / 40'),
+(10, 90, '0-56', '40 / 40'),
+(11, 90, '0-56', '40 / 40'),
+(12, 50, '0-56', '39 / 40'),
+(13, 50, '0-56', '39 / 40'),
+(14, 100, '0-56', '40 / 40'),
+(15, 30, '0-56', '22 / 40');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `questions`
+--
+
+CREATE TABLE `questions` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `level` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `used` int(10) UNSIGNED NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `questions`
+--
+
+INSERT INTO `questions` (`id`, `level`, `used`) VALUES
+(1, 4, 63),
+(2, 12, 46),
+(3, 27, 59),
+(4, 33, 63),
+(5, 30, 95),
+(6, 40, 78),
+(7, 37, 70),
+(8, 28, 79),
+(9, 5, 88),
+(10, 20, 53),
+(11, 0, 75),
+(12, 9, 64),
+(13, 11, 63),
+(14, 1, 84),
+(15, 0, 76),
+(16, 56, 94),
+(17, 0, 84),
+(18, 51, 45),
+(19, 21, 51),
+(20, 8, 80),
+(21, 18, 41),
+(22, 10, 39),
+(23, 5, 93),
+(24, 14, 79),
+(25, 14, 82),
+(26, 47, 76),
+(27, 51, 39),
+(28, 52, 44),
+(29, 53, 66),
+(30, 48, 49),
+(31, 8, 63),
+(32, 52, 75),
+(33, 31, 94),
+(34, 23, 90),
+(35, 27, 70),
+(36, 43, 48),
+(37, 30, 44),
+(38, 15, 40),
+(39, 47, 90),
+(40, 44, 59),
+(41, 36, 45),
+(42, 35, 67),
+(43, 50, 52),
+(44, 39, 73),
+(45, 8, 63),
+(46, 1, 52),
+(47, 11, 90),
+(48, 25, 85),
+(49, 20, 61),
+(50, 20, 2),
+(51, 27, 51),
+(52, 24, 77),
+(53, 18, 83),
+(54, 54, 88),
+(55, 21, 95),
+(56, 9, 58),
+(57, 7, 78),
+(58, 36, 69),
+(59, 40, 73),
+(60, 55, 63),
+(61, 34, 63),
+(62, 3, 87),
+(63, 47, 91),
+(64, 28, 40),
+(65, 33, 63),
+(66, 4, 41),
+(67, 49, 94),
+(68, 25, 79),
+(69, 26, 76),
+(70, 46, 51),
+(71, 55, 42),
+(72, 23, 78),
+(73, 15, 57),
+(74, 22, 66),
+(75, 51, 69),
+(76, 14, 55),
+(77, 50, 82),
+(78, 55, 35),
+(79, 42, 79),
+(80, 35, 72),
+(81, 39, 85),
+(82, 42, 57),
+(83, 54, 46),
+(84, 8, 81),
+(85, 50, 59),
+(86, 37, 68),
+(87, 10, 72),
+(88, 19, 63),
+(89, 12, 58),
+(90, 20, 62),
+(91, 33, 44),
+(92, 33, 53),
+(93, 49, 94),
+(94, 44, 45),
+(95, 34, 75),
+(96, 29, 90),
+(97, 9, 69),
+(98, 1, 44),
+(99, 31, 88),
+(100, 31, 39);
+
+--
+-- Индексы сохранённых таблиц
+--
+
+--
+-- Индексы таблицы `log`
+--
+ALTER TABLE `log`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `questions`
+--
+ALTER TABLE `questions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT для сохранённых таблиц
+--
+
+--
+-- AUTO_INCREMENT для таблицы `log`
+--
+ALTER TABLE `log`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT для таблицы `questions`
+--
+ALTER TABLE `questions`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
